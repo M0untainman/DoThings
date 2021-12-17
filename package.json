@@ -1,0 +1,25 @@
+{
+  "name": "dothings",
+  "version": "1.0.0",
+  "description": "To do list app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M0untainman/DoThings.git"
+  },
+  "author": "sam Chowles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/M0untainman/DoThings/issues"
+  },
+  "homepage": "https://github.com/M0untainman/DoThings#readme",
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
