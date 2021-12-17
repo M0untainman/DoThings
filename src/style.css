@@ -1,7 +1,13 @@
 body{
     background-color: black;
 }
+#taskContainer{
+    color: white;
+}
 
+.taskItem{
+    color: white;
+}
 #btn_add {
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
