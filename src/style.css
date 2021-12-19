@@ -3,10 +3,13 @@ body{
 }
 #taskContainer{
     color: white;
+    
 }
 
 .taskItem{
     color: white;
+    border: chartreuse;
+    border-style: inset;
 }
 #btn_add {
     -webkit-border-radius: 100px;
@@ -37,5 +40,35 @@ body{
     -webkit-border-radius: 62px;
     -moz-border-radius: 62px;
     border-radius: 62px;
+    text-decoration: none;
+ }
+
+ .btn_done {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-family: Brush Script MT;
+    font-size: 2rem;
+    font-weight: 100;
+    padding: 40px;
+    background-color: #FF0000;
+    -webkit-box-shadow: 1px 1px 20px 0 #000000;
+    -moz-box-shadow: 1px 1px 20px 0 #000000;
+    box-shadow: 1px 1px 20px 0 #000000;
+    text-shadow: 1px 1px 20px #000000;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    width: 2rem;
+    height: 0.5rem;
+ }
+ 
+ .btn_done:hover {
+    background: #FB3A3A;
+    border: solid #DD380D 1px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
     text-decoration: none;
  }
