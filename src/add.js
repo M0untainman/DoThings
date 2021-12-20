@@ -1,8 +1,12 @@
 import displayTasks from './display.js';
+import differenceInDays from 'date-fns/differenceInDays'
+import isDate from 'date-fns/isDate'
+import parseISO from 'date-fns/parseISO'
 
-export default function addTask(title, description) {
+export default function addTask(title, description, date) {
     // pulls all required funcitons together to give user expected result
-    let newTask = taskFactory(title, description)
+    let newTask = taskFactory(title, description, date)
+    console.log(`title: ${title}  description: ${description}  date: ${date}`)
     // get list from local storage
     let taskList = JSON.parse(localStorage.getItem('taskList')) || [];
     taskList.push(newTask);
@@ -11,8 +15,10 @@ export default function addTask(title, description) {
 }
 
 // factory function for creating tasks
-const taskFactory = (taskTitle, taskDescription) =>{
-    return {taskTitle, taskDescription}
+const taskFactory = (taskTitle, taskDescription, date) =>{
+    let today = new Date();
+    let daysRemaining = differenceInDays(parseISO(date), today)
+    return {taskTitle, taskDescription, date, daysRemaining}
 }
 
 const jobDone = (e) => {
@@ -34,5 +40,12 @@ const editTask = (e) => {
     displayTasks();
 }
 
-export {jobDone, editTask}
+
+const openForm = () => {
+    document.getElementById("popupForm").style.display = "block";
+  }
+const closeForm = () => {
+    document.getElementById("popupForm").style.display = "none";
+  }
+export {jobDone, editTask, openForm, closeForm}
     

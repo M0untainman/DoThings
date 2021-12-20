@@ -1,5 +1,6 @@
 import './style.css'
 import addTask from './add.js';
+import {jobDone, editTask, openForm, closeForm} from './add.js'
 import displayTasks from './display.js';
 
 //dom declartations
@@ -8,6 +9,7 @@ const btnClose = document.getElementById('btnClose')
 const btnSubmit = document.getElementById('btnSubmit')
 const title = document.getElementById('title');
 const description = document.getElementById('description')
+const date = document.getElementById('taskDate')
 
 // event listeners
 btn_add.addEventListener('click', () => {
@@ -17,18 +19,13 @@ btnClose.addEventListener('click', () =>{
     closeForm();
 })
 btnSubmit.addEventListener('click', () => {
-    addTask(title.value, description.value)
+    addTask(title.value, description.value, date.value)
     title.value = '';
     description.value = '';
     closeForm();
 })
 
-function openForm() {
-    document.getElementById("popupForm").style.display = "block";
-  }
-  function closeForm() {
-    document.getElementById("popupForm").style.display = "none";
-  }
+
 
 const display = (() =>{
     displayTasks()
