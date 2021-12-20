@@ -14,3 +14,7 @@ btn_add.addEventListener('click', () => {
 
 })
 
+const display = (() =>{
+    console.log('fix display')
+})()
+
