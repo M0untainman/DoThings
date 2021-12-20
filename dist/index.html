@@ -1,37 +1,46 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Do Things</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <div id='btn_add'>+</div>
-        <div class="openBtn">
+      <div id="btn_add">+</div>
+      <div class="openBtn"></div>
+      <div class="taskPopup">
+        <div class="formPopup" id="popupForm">
+          <div class="formContainer" id="taskForm">
+            <h2>Please enter task details</h2>
+            <label for="title">
+              <strong>Title</strong>
+            </label>
+            <input
+              type="text"
+              id="title"
+              placeholder="Task title"
+              name="title"
+            />
+            <label for="description">
+              <strong>desciption</strong>
+            </label>
+            <input
+              type="text"
+              id="description"
+              placeholder="Task desciption"
+              name="description"
+            />
+            <button type="button" class="btn" id='btnSubmit'>Submit task</button>
+            <button type="button" class="btn cancel" id="btnClose">
+              Close
+            </button>
         </div>
-        <div class="taskPopup">
-            <div class="formPopup" id="popupForm">
-                <form action="/action_page.php" class="formContainer">
-                <h2>Please enter task details</h2>
-                <label for="title">
-                    <strong>Title</strong>
-                </label>
-                <input type="text" id="title" placeholder="Task title" name="title" required>
-                <label for="desciption">
-                    <strong>desciption</strong>
-                </label>
-                <input type="text" id="desciption" placeholder="Task desciption" name="desciption" required>
-                <button type="submit" class="btn">Submit task</button>
-                <button type="button" class="btn cancel" id='btnClose'>Close</button>
-                </form>
-            </div>
-        </div>  
+        </div>
+      </div>
     </div>
-    <div id='taskContainer'>
+    <div id="taskContainer"></div>
 
-    </div>
-    
     <script src="index.bundle.js"></script>
-</body>
+  </body>
 </html>
