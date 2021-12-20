@@ -1,6 +1,6 @@
 import './style.css'
-import addTask from './add.js';
-import {jobDone, editTask, openForm, closeForm} from './add.js'
+import addTask from './taskManipulation.js';
+import {jobDone, editTask, openForm, closeForm} from './taskManipulation.js'
 import displayTasks from './display.js';
 
 //dom declartations

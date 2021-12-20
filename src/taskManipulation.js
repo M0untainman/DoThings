@@ -6,7 +6,7 @@ import parseISO from 'date-fns/parseISO'
 export default function addTask(title, description, date) {
     // pulls all required funcitons together to give user expected result
     let newTask = taskFactory(title, description, date)
-    console.log(`title: ${title}  description: ${description}  date: ${date}`)
+    // console.log(`title: ${title}  description: ${description}  date: ${date}`)
     // get list from local storage
     let taskList = JSON.parse(localStorage.getItem('taskList')) || [];
     taskList.push(newTask);

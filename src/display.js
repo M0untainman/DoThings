@@ -1,4 +1,4 @@
-import { jobDone, editTask, getDaysRemaining } from "./add";
+import { jobDone, editTask, getDaysRemaining } from "./taskManipulation";
 
 // function to display task info to the DOM
 export default function displayTasks() {
