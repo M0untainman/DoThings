@@ -1,5 +1,4 @@
-import { jobDone } from "./add";
-import { editTask } from "./add";
+import { jobDone, editTask, getDaysRemaining } from "./add";
 
 // function to display task info to the DOM
 export default function displayTasks() {
@@ -22,7 +21,7 @@ export default function displayTasks() {
             taskItem.appendChild(taskDescription); 
             // show date
             const daysRemaining = document.createElement('p')
-            daysRemaining.innerHTML = `You have ${task.daysRemaining} days remaining to complete this task`
+            daysRemaining.innerHTML = `You have ${getDaysRemaining(task.date)} days remaining to complete this task`
             const labelDate = document.createElement('p');
             labelDate.innerHTML = 'The due date for this task is:';
             taskItem.appendChild(labelDate);

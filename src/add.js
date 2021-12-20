@@ -16,9 +16,7 @@ export default function addTask(title, description, date) {
 
 // factory function for creating tasks
 const taskFactory = (taskTitle, taskDescription, date) =>{
-    let today = new Date();
-    let daysRemaining = differenceInDays(parseISO(date), today)
-    return {taskTitle, taskDescription, date, daysRemaining}
+    return {taskTitle, taskDescription, date}
 }
 
 const jobDone = (e) => {
@@ -40,6 +38,12 @@ const editTask = (e) => {
     displayTasks();
 }
 
+const getDaysRemaining = (duedate) => {
+    let today = new Date();
+    let daysRemaining = differenceInDays(parseISO(duedate), today)
+    return daysRemaining;
+}
+
 
 const openForm = () => {
     document.getElementById("popupForm").style.display = "block";
@@ -47,5 +51,5 @@ const openForm = () => {
 const closeForm = () => {
     document.getElementById("popupForm").style.display = "none";
   }
-export {jobDone, editTask, openForm, closeForm}
+export {jobDone, editTask, getDaysRemaining, openForm, closeForm}
     
