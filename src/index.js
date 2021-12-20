@@ -1,5 +1,6 @@
 import './style.css'
 import addTask from './add.js';
+import displayTasks from './display.js';
 
 //dom declartations
 const btn_add = document.getElementById('btn_add');
@@ -15,6 +16,6 @@ btn_add.addEventListener('click', () => {
 })
 
 const display = (() =>{
-    console.log('fix display')
+    displayTasks()
 })()
 
