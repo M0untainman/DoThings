@@ -8,8 +8,25 @@
 <body>
     <div>
         <div id='btn_add'>+</div>
-        <input type="text" placeholder="write task name here" id='task_title'>
-        <input type="text" placeholder="write description here" id='task_description'>
+        <div class="openBtn">
+        </div>
+        <div class="taskPopup">
+            <div class="formPopup" id="popupForm">
+                <form action="/action_page.php" class="formContainer">
+                <h2>Please enter task details</h2>
+                <label for="title">
+                    <strong>Title</strong>
+                </label>
+                <input type="text" id="title" placeholder="Task title" name="title" required>
+                <label for="desciption">
+                    <strong>desciption</strong>
+                </label>
+                <input type="text" id="desciption" placeholder="Task desciption" name="desciption" required>
+                <button type="submit" class="btn">Submit task</button>
+                <button type="button" class="btn cancel" id='btnClose'>Close</button>
+                </form>
+            </div>
+        </div>  
     </div>
     <div id='taskContainer'>
 
