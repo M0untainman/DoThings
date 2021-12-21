@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: {
     index : './src/index.js',
-    add: './src/add.js',
+    taskManipulation: './src/taskManipulation.js',
     display: './src/display.js'
   },
   devtool: 'inline-source-map',
