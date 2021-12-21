@@ -34,6 +34,12 @@
             <label for="taskDate">
                 <strong>Enter due date</strong>
             <input type="date" name="" id="taskDate">
+            <label for="category">Select the category for your task</label>
+            <select name="category" id="category">
+              <option value="work">work</option>
+              <option value="fitness">fitness</option>
+              <option value="chores">chores</option>
+            </select>
             <hr>
             <button type="submit" class="btn" id='btnSubmit' onsubmit="() => { addTask()}" >Submit task</button>
             <button type="button" class="btn cancel" id="btnClose">Close</button>
