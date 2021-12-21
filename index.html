@@ -10,7 +10,7 @@
       <div id="btn_add">+</div>
       <div class="openBtn"></div>
       <div class="taskPopup">
-        <div class="formPopup" id="popupForm">
+        <form class="formPopup" id="popupForm">
           <div class="formContainer" id="taskForm">
             <h2>Please enter task details</h2>
             <label for="title">
@@ -35,11 +35,9 @@
                 <strong>Enter due date</strong>
             <input type="date" name="" id="taskDate">
             <hr>
-            <button type="button" class="btn" id='btnSubmit'>Submit task</button>
-            <button type="button" class="btn cancel" id="btnClose">
-              Close
-            </button>
-        </div>
+            <button type="submit" class="btn" id='btnSubmit' onsubmit="() => { addTask()}" >Submit task</button>
+            <button type="button" class="btn cancel" id="btnClose">Close</button>
+            </form>
         </div>
       </div>
     </div>
