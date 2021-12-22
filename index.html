@@ -18,6 +18,8 @@
             </select>
             <button id="btnFilterProject">view this project</button>
             <button id="viewAll">View all tasks</button>
+            <button id="btnNewProject">Add new Project</button>
+            <button id='btnResetProjectList'>Reset project list</button>
         </div>
       </div>
       
@@ -55,6 +57,25 @@
             <hr>
             <button type="submit" class="btn" id='btnSubmit' onsubmit="() => { addTask()}" >Submit task</button>
             <button type="button" class="btn cancel" id="btnClose">Close</button>
+            </form>
+        </div>
+        <div class="taskPopup">
+          <form class="formPopup" id="ProjectPopup">
+          <div class="formContainer" id="taskForm">
+            <h2>Please enter new project name</h2>
+            <label for="projectName">
+              <strong>Project name</strong>
+            </label>
+            <input
+              type="text"
+              id="newProjectName"
+              placeholder="New project name"
+              name="projectName"
+            />
+            </select>
+            <hr>
+            <button type="submit" class="btn" id='btnProjectSubmit' onsubmit="() => { addProject()}" >Submit task</button>
+            <button type="button" class="btn cancel" id="btnProjectClose">Close</button>
             </form>
         </div>
       </div>
