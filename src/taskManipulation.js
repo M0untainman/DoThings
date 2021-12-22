@@ -48,4 +48,37 @@ const openForm = () => {
 const closeForm = () => {
   document.getElementById('popupForm').style.display = 'none';
 };
-export { jobDone, editTask, getDaysRemaining, openForm, closeForm, addTask };
+
+const openProjectForm = () => {
+  document.getElementById('ProjectPopup').style.display = 'block';
+};
+const closeProjectForm = () => {
+  document.getElementById('ProjectPopup').style.display = 'none';
+};
+
+const addProject = (project) => {
+  let projectList = JSON.parse(localStorage.getItem('projectList'));
+  console.log(projectList);
+  projectList.push(project);
+  console.log(`the new list is ${projectList}`);
+  localStorage.setItem('projectList', JSON.stringify(projectList));
+};
+
+const resetProjectList = () => {
+  let projectList = JSON.parse(localStorage.getItem('projectList'));
+  projectList = ['work', 'chores', 'fitness'];
+  localStorage.setItem('projectList', JSON.stringify(projectList));
+};
+
+export {
+  jobDone,
+  editTask,
+  getDaysRemaining,
+  openForm,
+  closeForm,
+  addTask,
+  openProjectForm,
+  closeProjectForm,
+  addProject,
+  resetProjectList,
+};

@@ -97,6 +97,10 @@ body {
   border: 3px solid #999999;
   z-index: 9;
 }
+
+#ProjectPopup {
+  display: none;
+}
 .formContainer {
   max-width: 300px;
   padding: 20px;

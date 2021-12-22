@@ -5,6 +5,10 @@ import {
   openForm,
   closeForm,
   addTask,
+  addProject,
+  openProjectForm,
+  closeProjectForm,
+  resetProjectList,
 } from './taskManipulation.js';
 import { displayTasks, FilterProjects } from './display.js';
 
@@ -18,6 +22,11 @@ const date = document.getElementById('taskDate');
 let category = document.getElementById('categoryView');
 const btnFilterProject = document.getElementById('btnFilterProject');
 const viewAll = document.getElementById('viewAll');
+const btnNewProject = document.getElementById('btnNewProject');
+const btnProjectClose = document.getElementById('btnProjectClose');
+const btnProjectSubmit = document.getElementById('btnProjectSubmit');
+const newProjectName = document.getElementById('newProjectName');
+const btnResetProjectList = document.getElementById('btnResetProjectList');
 
 // event listeners
 btn_add.addEventListener('click', () => {
@@ -39,8 +48,30 @@ viewAll.addEventListener('click', () => {
   displayTasks();
 });
 
+btnNewProject.addEventListener('click', () => {
+  openProjectForm();
+});
+
+btnProjectClose.addEventListener('click', () => {
+  closeProjectForm();
+});
+btnProjectSubmit.addEventListener('click', () => {
+  addProject(newProjectName.value);
+  newProjectName.value = '';
+});
+
+btnResetProjectList.addEventListener('click', () => {
+  resetProjectList();
+});
+
 // initialize program
-const display = () => {
+const initialize = () => {
   displayTasks();
+  let projectList = JSON.parse(localStorage.getItem('projectList')) || [
+    'work',
+    'chores',
+    'fitness',
+  ];
+  localStorage.setItem('projectList', JSON.stringify(projectList));
 };
-display();
+initialize();
