@@ -11,7 +11,7 @@
         <div id="btn_add">+</div>
         <div class="projectView">
           <label for="categoryView" id="projectViewlabel">Select project to view</label>
-          <select name="category"  id="projectOptionsViewer2">
+          <select name="category"  id="projectOptionsViewerStart">
             </select>
             <button id="btnFilterProject">view this project</button>
             <button id="viewAll">View all tasks</button>
@@ -46,10 +46,10 @@
                 <strong>Enter due date</strong>
             <input type="date" name="" id="taskDate">
             <label for="category">Select the category for your task</label>
-            <select name="category"  id="projectOptionsViewer1">
+            <select name="category"  id="projectOptionsViewerForm">
             </select>
             <hr>
-            <button type="submit" class="btn" id='btnSubmit' onsubmit="() => { addTask()}" >Submit task</button>
+            <button type="submit" class="btn" id='btnSubmit' onsubmit="() => { }" >Submit task</button>
             <button type="button" class="btn cancel" id="btnClose">Close</button>
             </form>
         </div>
@@ -73,6 +73,40 @@
         </div>
       </div>
     </div>
+
+    <div class="taskPopup">
+        <form class="formPopup" id="popupEditForm">
+          <div class="formContainer" id="editForm">
+            <h2>Please edit task details</h2>
+            <label for="title">
+              <strong>Title</strong>
+            </label>
+            <input
+              type="text"
+              id="editTitle"
+              placeholder="edit title"
+              name="editTitle"
+            />
+            <label for="description">
+              <strong>Desciption</strong>
+            </label>
+            <input
+              type="text"
+              id="editDescription"
+              placeholder="Edit desciption"
+              name="editDescription"
+            />
+            <label for="taskDate">
+                <strong>Edit due date</strong>
+            <input type="date" id="editTaskDate">
+            <label for="category">Edit the category for your task</label>
+            <select name="category"  id="projectOptionsViewerEdit">
+            </select>
+            <hr>
+            <button type="submit" class="btn" id='btnEditSubmit'  >Submit edited task</button>
+            <button type="button" class="btn cancel" id="btneditClose">Close</button>
+            </form>
+        </div>
     <div id="taskContainer"></div>
 
     <script src="index.bundle.js"></script>
