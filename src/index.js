@@ -9,6 +9,8 @@ import {
   openProjectForm,
   closeProjectForm,
   resetProjectList,
+  closeEditForm,
+  openEditForm,
 } from './taskManipulation.js';
 import {
   displayTasks,
@@ -23,7 +25,6 @@ const btnSubmit = document.getElementById('btnSubmit');
 const title = document.getElementById('title');
 const description = document.getElementById('description');
 const date = document.getElementById('taskDate');
-let category = document.getElementById('categoryView');
 const btnFilterProject = document.getElementById('btnFilterProject');
 const viewAll = document.getElementById('viewAll');
 const btnNewProject = document.getElementById('btnNewProject');
@@ -31,8 +32,20 @@ const btnProjectClose = document.getElementById('btnProjectClose');
 const btnProjectSubmit = document.getElementById('btnProjectSubmit');
 const newProjectName = document.getElementById('newProjectName');
 const btnResetProjectList = document.getElementById('btnResetProjectList');
-const projectOptionsViewer1 = document.getElementById('projectOptionsViewer1');
-const projectOptionsViewer2 = document.getElementById('projectOptionsViewer2');
+let projectOptionsViewerStart = document.getElementById(
+  'projectOptionsViewerStart'
+);
+let projectOptionsViewerForm = document.getElementById(
+  'projectOptionsViewerForm'
+);
+let projectOptionsViewerEdit = document.getElementById(
+  'projectOptionsViewerEdit'
+);
+const btneditClose = document.getElementById('btneditClose');
+const btnEditSubmit = document.getElementById('btnEditSubmit');
+let editTaskDate = document.getElementById('editTaskDate');
+let editTitle = document.getElementById('editTitle');
+let editDescription = document.getElementById('editDescription');
 
 // event listeners
 btn_add.addEventListener('click', () => {
@@ -42,13 +55,18 @@ btnClose.addEventListener('click', () => {
   closeForm();
 });
 btnSubmit.addEventListener('click', () => {
-  addTask(title.value, description.value, date.value, category.value);
+  addTask(
+    title.value,
+    description.value,
+    date.value,
+    projectOptionsViewerForm.value
+  );
   title.value = '';
   description.value = '';
   closeForm();
 });
 btnFilterProject.addEventListener('click', () => {
-  FilterProjects(categoryView.value);
+  FilterProjects(projectOptionsViewerStart.value);
 });
 viewAll.addEventListener('click', () => {
   displayTasks();
@@ -69,6 +87,21 @@ btnProjectSubmit.addEventListener('click', () => {
 btnResetProjectList.addEventListener('click', () => {
   resetProjectList();
 });
+btneditClose.addEventListener('click', () => {
+  closeEditForm();
+});
+btnEditSubmit.addEventListener('click', () => {
+  console.log('edit called');
+  editTask(
+    editTitle.value,
+    editDescription.value,
+    editTaskDate.value,
+    projectOptionsViewerEdit.value
+  );
+  editTitle.value = '';
+  editDescription.value = '';
+  closeEditForm();
+});
 
 // initialize program
 const initialize = () => {
@@ -79,7 +112,8 @@ const initialize = () => {
     'fitness',
   ];
   localStorage.setItem('projectList', JSON.stringify(projectList));
-  populateProjectOptions(projectOptionsViewer1);
-  populateProjectOptions(projectOptionsViewer2);
+  populateProjectOptions(projectOptionsViewerStart);
+  populateProjectOptions(projectOptionsViewerForm);
+  populateProjectOptions(projectOptionsViewerEdit);
 };
 initialize();

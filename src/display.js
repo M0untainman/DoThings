@@ -1,4 +1,9 @@
-import { jobDone, editTask, getDaysRemaining } from './taskManipulation';
+import {
+  jobDone,
+  editTask,
+  getDaysRemaining,
+  openEditForm,
+} from './taskManipulation';
 
 // function to display task info to the DOM
 const displayTasks = (filterValue = 'noProjectSelected') => {
@@ -53,7 +58,11 @@ const createLargeTaskItems = (task, index) => {
   const edit = document.createElement('div');
   edit.classList.add('btn_done');
   edit.innerHTML = 'Edit';
-  edit.addEventListener('click', editTask);
+  edit.addEventListener('click', (e) => {
+    let taskToEdit = e.srcElement.parentElement.id;
+    localStorage.setItem('taskToEdit', JSON.stringify(taskToEdit));
+    openEditForm();
+  });
   taskItem.appendChild(edit);
   // show category
   const category = document.createElement('p');

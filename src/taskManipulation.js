@@ -1,4 +1,4 @@
-import displayTasks from './display.js';
+import { displayTasks } from './display.js';
 import differenceInDays from 'date-fns/differenceInDays';
 import isDate from 'date-fns/isDate';
 import parseISO from 'date-fns/parseISO';
@@ -26,12 +26,19 @@ const jobDone = (e) => {
   displayTasks();
 };
 
-const editTask = (e) => {
+const editTask = (
+  editedTitle,
+  editedDescription,
+  editedDate,
+  editedCategory
+) => {
   //function to remove a book from library
   let taskList = JSON.parse(localStorage.getItem('taskList'));
-  let taskToEdit = e.srcElement.parentElement.id;
-  taskList[taskToEdit].taskTitle = 'changed title';
-  taskList[taskToEdit].taskDescription = 'changed description';
+  let taskToEdit = JSON.parse(localStorage.getItem('taskToEdit'));
+  taskList[taskToEdit].taskTitle = editedTitle;
+  taskList[taskToEdit].taskDescription = editedDescription;
+  taskList[taskToEdit].date = editedDate;
+  taskList[taskToEdit].category = editedCategory;
   localStorage.setItem('taskList', JSON.stringify(taskList));
   displayTasks();
 };
@@ -54,6 +61,13 @@ const openProjectForm = () => {
 };
 const closeProjectForm = () => {
   document.getElementById('ProjectPopup').style.display = 'none';
+};
+
+const openEditForm = () => {
+  document.getElementById('popupEditForm').style.display = 'block';
+};
+const closeEditForm = () => {
+  document.getElementById('popupEditForm').style.display = 'none';
 };
 
 const addProject = (project) => {
@@ -81,4 +95,6 @@ export {
   closeProjectForm,
   addProject,
   resetProjectList,
+  closeEditForm,
+  openEditForm,
 };
