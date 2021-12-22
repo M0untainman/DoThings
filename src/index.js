@@ -15,8 +15,9 @@ const btnSubmit = document.getElementById('btnSubmit');
 const title = document.getElementById('title');
 const description = document.getElementById('description');
 const date = document.getElementById('taskDate');
-const category = document.getElementById('category');
+let category = document.getElementById('categoryView');
 const btnFilterProject = document.getElementById('btnFilterProject');
+const viewAll = document.getElementById('viewAll');
 
 // event listeners
 btn_add.addEventListener('click', () => {
@@ -32,7 +33,10 @@ btnSubmit.addEventListener('click', () => {
   closeForm();
 });
 btnFilterProject.addEventListener('click', () => {
-  FilterProjects();
+  FilterProjects(categoryView.value);
+});
+viewAll.addEventListener('click', () => {
+  displayTasks();
 });
 
 // initialize program
