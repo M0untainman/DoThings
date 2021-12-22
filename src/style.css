@@ -1,124 +1,134 @@
-body{
-    background-color: black;
-}
-#taskContainer{
-    color: white;
-    
+body {
+  background-color: black;
 }
 
-.taskItem{
-    color: white;
-    border: chartreuse;
-    border-style: inset;
+.controls {
+  display: flex;
+}
+
+#projectViewlabel {
+  color: #ffffff;
+}
+#taskContainer {
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+.taskItem {
+  color: white;
+  border: chartreuse;
+  border-style: inset;
+  max-width: 20rem;
 }
 #btn_add {
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    border-radius: 100px;
-    height: 50px;
-    line-height: 50px;
-    color: #FFFFFF;
-    font-family: Arial;
-    width: 56px;
-    font-size: 100px;
-    font-weight: 400;
-    padding: 17px;
-    background-color: #128D31;
-    -webkit-box-shadow: 1px 1px 20px 0 #000000;
-    -moz-box-shadow: 1px 1px 20px 0 #000000;
-    box-shadow: 1px 1px 20px 0 #000000;
-    text-shadow: 1px 1px 20px #000000;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
- }
- 
- .btn_add:hover {
-    background: #128D31;
-    border: solid #FFFFFF 7px;
-    -webkit-border-radius: 62px;
-    -moz-border-radius: 62px;
-    border-radius: 62px;
-    text-decoration: none;
- }
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  height: 50px;
+  line-height: 50px;
+  color: #ffffff;
+  font-family: Arial;
+  width: 56px;
+  font-size: 100px;
+  font-weight: 400;
+  padding: 17px;
+  background-color: #128d31;
+  -webkit-box-shadow: 1px 1px 20px 0 #000000;
+  -moz-box-shadow: 1px 1px 20px 0 #000000;
+  box-shadow: 1px 1px 20px 0 #000000;
+  text-shadow: 1px 1px 20px #000000;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
 
- .btn_done {
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    color: #FFFFFF;
-    font-family: Brush Script MT;
-    font-size: 2rem;
-    font-weight: 100;
-    padding: 40px;
-    background-color: #FF0000;
-    -webkit-box-shadow: 1px 1px 20px 0 #000000;
-    -moz-box-shadow: 1px 1px 20px 0 #000000;
-    box-shadow: 1px 1px 20px 0 #000000;
-    text-shadow: 1px 1px 20px #000000;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: center;
-    width: 2rem;
-    height: 0.5rem;
- }
- 
- .btn_done:hover {
-    background: #FB3A3A;
-    border: solid #DD380D 1px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    text-decoration: none;
- }
+.btn_add:hover {
+  background: #128d31;
+  border: solid #ffffff 7px;
+  -webkit-border-radius: 62px;
+  -moz-border-radius: 62px;
+  border-radius: 62px;
+  text-decoration: none;
+}
 
-  .taskPopup {
-    position: relative;
-    text-align: center;
-    width: 100%;
-  }
-  .formPopup {
-    display: none;
-    position: fixed;
-    left: 45%;
-    top: 5%;
-    transform: translate(-50%, 5%);
-    border: 3px solid #999999;
-    z-index: 9;
-  }
-  .formContainer {
-    max-width: 300px;
-    padding: 20px;
-    background-color: #fff;
-  }
-  .formContainer input[type=text],
-  .formContainer input[type=text] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 20px 0;
-    border: none;
-    background: #eee;
-  }
-  .formContainer input[type=text]:focus,
-  .formContainer input[type=text]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  .formContainer .btn {
-    padding: 12px 20px;
-    border: none;
-    background-color: #8ebf42;
-    color: #fff;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 15px;
-    opacity: 0.8;
-  }
-  .formContainer .cancel {
-    background-color: #cc0000;
-  }
-  .formContainer .btn:hover,
-  .openButton:hover {
-    opacity: 1;
-  }
+.btn_done {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-family: Brush Script MT;
+  font-size: 2rem;
+  font-weight: 100;
+  padding: 40px;
+  background-color: #ff0000;
+  -webkit-box-shadow: 1px 1px 20px 0 #000000;
+  -moz-box-shadow: 1px 1px 20px 0 #000000;
+  box-shadow: 1px 1px 20px 0 #000000;
+  text-shadow: 1px 1px 20px #000000;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  width: 2rem;
+  height: 0.5rem;
+}
+
+.btn_done:hover {
+  background: #fb3a3a;
+  border: solid #dd380d 1px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.taskPopup {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.formPopup {
+  display: none;
+  position: fixed;
+  left: 45%;
+  top: 5%;
+  transform: translate(-50%, 5%);
+  border: 3px solid #999999;
+  z-index: 9;
+}
+.formContainer {
+  max-width: 300px;
+  padding: 20px;
+  background-color: #fff;
+}
+.formContainer input[type='text'],
+.formContainer input[type='text'] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 20px 0;
+  border: none;
+  background: #eee;
+}
+.formContainer input[type='text']:focus,
+.formContainer input[type='text']:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.formContainer .btn {
+  padding: 12px 20px;
+  border: none;
+  background-color: #8ebf42;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 15px;
+  opacity: 0.8;
+}
+.formContainer .cancel {
+  background-color: #cc0000;
+}
+.formContainer .btn:hover,
+.openButton:hover {
+  opacity: 1;
+}

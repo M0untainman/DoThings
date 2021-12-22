@@ -6,7 +6,7 @@ import {
   closeForm,
   addTask,
 } from './taskManipulation.js';
-import displayTasks from './display.js';
+import { displayTasks, FilterProjects } from './display.js';
 
 //dom declartations
 const btn_add = document.getElementById('btn_add');
@@ -16,6 +16,7 @@ const title = document.getElementById('title');
 const description = document.getElementById('description');
 const date = document.getElementById('taskDate');
 const category = document.getElementById('category');
+const btnFilterProject = document.getElementById('btnFilterProject');
 
 // event listeners
 btn_add.addEventListener('click', () => {
@@ -30,7 +31,11 @@ btnSubmit.addEventListener('click', () => {
   description.value = '';
   closeForm();
 });
+btnFilterProject.addEventListener('click', () => {
+  FilterProjects();
+});
 
+// initialize program
 const display = () => {
   displayTasks();
 };

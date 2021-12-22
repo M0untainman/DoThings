@@ -1,7 +1,7 @@
 import { jobDone, editTask, getDaysRemaining } from './taskManipulation';
 
 // function to display task info to the DOM
-export default function displayTasks() {
+const displayTasks = () => {
   const taskContainer = document.getElementById('taskContainer');
   taskContainer.innerHTML = '';
   let taskList = JSON.parse(localStorage.getItem('taskList'));
@@ -51,4 +51,10 @@ export default function displayTasks() {
     category.innerHTML = task.category;
     taskItem.appendChild(category);
   });
-}
+};
+
+const FilterProjects = () => {
+  console.log('working on it');
+};
+
+export { displayTasks, FilterProjects };

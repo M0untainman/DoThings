@@ -7,8 +7,19 @@
   </head>
   <body>
     <div>
-      <div id="btn_add">+</div>
-      <div class="openBtn"></div>
+      <div class="controls">
+        <div id="btn_add">+</div>
+        <div class="projectView">
+          <label for="categoryView" id="projectViewlabel">Select project to view</label>
+          <select name="category" id="categoryView">
+              <option value="work">work</option>
+              <option value="fitness">fitness</option>
+              <option value="chores">chores</option>
+            </select>
+            <button id="btnFilterProject">view this project</button>
+        </div>
+      </div>
+      
       <div class="taskPopup">
         <form class="formPopup" id="popupForm">
           <div class="formContainer" id="taskForm">
