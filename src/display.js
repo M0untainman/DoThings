@@ -65,4 +65,15 @@ const FilterProjects = (filterValue) => {
   displayTasks(filterValue);
 };
 
-export { displayTasks, FilterProjects };
+const populateProjectOptions = (projectOptionsViewer) => {
+  let projectList = JSON.parse(localStorage.getItem('projectList'));
+  let options = projectList
+    .map(
+      (projectList) =>
+        `<option value=${projectList.toLowerCase()}>${projectList}</option>`
+    )
+    .join('\n');
+  projectOptionsViewer.innerHTML = options;
+};
+
+export { displayTasks, FilterProjects, populateProjectOptions };

@@ -10,7 +10,11 @@ import {
   closeProjectForm,
   resetProjectList,
 } from './taskManipulation.js';
-import { displayTasks, FilterProjects } from './display.js';
+import {
+  displayTasks,
+  FilterProjects,
+  populateProjectOptions,
+} from './display.js';
 
 //dom declartations
 const btn_add = document.getElementById('btn_add');
@@ -27,6 +31,8 @@ const btnProjectClose = document.getElementById('btnProjectClose');
 const btnProjectSubmit = document.getElementById('btnProjectSubmit');
 const newProjectName = document.getElementById('newProjectName');
 const btnResetProjectList = document.getElementById('btnResetProjectList');
+const projectOptionsViewer1 = document.getElementById('projectOptionsViewer1');
+const projectOptionsViewer2 = document.getElementById('projectOptionsViewer2');
 
 // event listeners
 btn_add.addEventListener('click', () => {
@@ -73,5 +79,7 @@ const initialize = () => {
     'fitness',
   ];
   localStorage.setItem('projectList', JSON.stringify(projectList));
+  populateProjectOptions(projectOptionsViewer1);
+  populateProjectOptions(projectOptionsViewer2);
 };
 initialize();

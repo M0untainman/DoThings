@@ -11,10 +11,7 @@
         <div id="btn_add">+</div>
         <div class="projectView">
           <label for="categoryView" id="projectViewlabel">Select project to view</label>
-          <select name="category" id="categoryView">
-              <option value="work">work</option>
-              <option value="fitness">fitness</option>
-              <option value="chores">chores</option>
+          <select name="category"  id="projectOptionsViewer2">
             </select>
             <button id="btnFilterProject">view this project</button>
             <button id="viewAll">View all tasks</button>
@@ -49,10 +46,7 @@
                 <strong>Enter due date</strong>
             <input type="date" name="" id="taskDate">
             <label for="category">Select the category for your task</label>
-            <select name="category" id="category">
-              <option value="work">work</option>
-              <option value="fitness">fitness</option>
-              <option value="chores">chores</option>
+            <select name="category"  id="projectOptionsViewer1">
             </select>
             <hr>
             <button type="submit" class="btn" id='btnSubmit' onsubmit="() => { addTask()}" >Submit task</button>
@@ -72,7 +66,6 @@
               placeholder="New project name"
               name="projectName"
             />
-            </select>
             <hr>
             <button type="submit" class="btn" id='btnProjectSubmit' onsubmit="() => { addProject()}" >Submit task</button>
             <button type="button" class="btn cancel" id="btnProjectClose">Close</button>
